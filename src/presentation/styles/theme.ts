@@ -1,4 +1,5 @@
 export interface ITheme {
+	mode: 'light' | 'dark';
 	colors: {
 		primary: string;
 		secundary: string;
@@ -22,6 +23,7 @@ export interface ITheme {
 }
 
 const theme: ITheme = {
+	mode: 'light',
 	colors: {
 		primary: '#001f46',
 		secundary: '#d2ae6d',
