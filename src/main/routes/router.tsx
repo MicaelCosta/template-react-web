@@ -1,20 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { MakeDashboard } from "@/main/factories/pages";
-
-import { GlobalStyle } from "@/presentation/styles/global";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { MakeDashboard } from '@/main/factories/pages';
 
 const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <MakeDashboard />,
-  },
+	{
+		path: '/',
+		element: <MakeDashboard />,
+	},
 ]);
 
 export function Router() {
-  return (
-    <>
-      <GlobalStyle />
-      <RouterProvider router={routes} />
-    </>
-  );
+	return <RouterProvider router={routes} />;
 }

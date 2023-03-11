@@ -1,5 +1,5 @@
-import { Dashboard } from "@/presentation/pages";
+import { Dashboard } from '@/presentation/pages';
 
 export function MakeDashboard() {
-  return <Dashboard />;
+	return <Dashboard />;
 }

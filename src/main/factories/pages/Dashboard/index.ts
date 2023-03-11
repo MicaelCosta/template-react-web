@@ -1,1 +1,1 @@
-export * from "./makeDashboard";
+export * from './makeDashboard';
