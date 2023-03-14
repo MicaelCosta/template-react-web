@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
 	height: 60px;
+	width: 100%;
 	background: ${({ theme }) => theme.colors.background};
 	color: ${({ theme }) => theme.colors.text};
 	display: flex;

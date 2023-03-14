@@ -1,5 +1,9 @@
 import { Container } from './styles';
 
 export function Header() {
-	return <Container>Header</Container>;
+	return (
+		<Container>
+			<h1>Header</h1>
+		</Container>
+	);
 }

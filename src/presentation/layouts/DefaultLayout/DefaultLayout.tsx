@@ -1,8 +1,8 @@
 import { useRoutes, matchRoutes, useLocation } from 'react-router-dom';
-import { Header } from '@/presentation/components';
+import { Header, Navbar } from '@/presentation/components';
 import { useAppContext } from '@/presentation/hooks';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 export function DefaultLayout() {
 	const { routes } = useAppContext();
@@ -15,9 +15,13 @@ export function DefaultLayout() {
 
 	return (
 		<Container>
-			{!!matched && !!matched?.route?.config?.toolbar && <Header />}
+			{!!matched && !!matched?.route?.config?.navbar && <Navbar />}
 
-			{useRoutes(routes)}
+			<Content>
+				{!!matched && !!matched?.route?.config?.toolbar && <Header />}
+
+				{useRoutes(routes)}
+			</Content>
 		</Container>
 	);
 }
