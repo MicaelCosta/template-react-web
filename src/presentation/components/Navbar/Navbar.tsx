@@ -1,22 +1,13 @@
+import { useState } from 'react';
 import { Button, Container, Header, SubNav, SubNavItem } from './styles';
 
 export function Navbar() {
+	const [idSelected, setIdSelected] = useState(0);
+
 	const subNavs = document.querySelectorAll('.subNav');
 	const buttons = document.querySelectorAll('.sidebar button');
 
-	function resetSidebar() {
-		subNavs.forEach(nav => {
-			nav.style.height = 0;
-		});
-
-		buttons.forEach(btn => {
-			btn.classList.remove('active');
-		});
-	}
-
 	function handleClick(subNav) {
-		resetSidebar();
-
 		const subNavOuter = document.querySelector(`#${subNav}`);
 		const subNavInner = document.querySelector(`#${subNav} .subnav-inner`);
 
@@ -31,38 +22,54 @@ export function Navbar() {
 		}
 	}
 
+	function handleSelect(id: number) {
+		setIdSelected(id);
+	}
+
 	return (
 		<Container className="sidebar">
 			<Header>
 				<h1>Navbar</h1>
 			</Header>
 
-			<Button>
+			<Button
+				onClick={() => handleSelect(0)}
+				selected={0 === idSelected}
+				root
+			>
 				<span>Home</span>
 			</Button>
 
-			<Button onClick={() => handleClick('tools')}>
+			<Button
+				onClick={() => handleSelect(1)}
+				selected={1 === idSelected}
+				root
+			>
 				<span>Login</span>
 			</Button>
 
-			<SubNav id="tools" className="subnav">
-				<SubNavItem className="subnav-inner">
-					<Button>
+			<SubNav selected={1 === idSelected}>
+				<SubNavItem>
+					<Button selected={false}>
 						<span>Submenu</span>
 					</Button>
 				</SubNavItem>
 			</SubNav>
 
-			<Button onClick={() => handleClick('tools2')}>
+			<Button
+				onClick={() => handleSelect(2)}
+				selected={2 === idSelected}
+				root
+			>
 				<span>Opcao 2</span>
 			</Button>
 
-			<SubNav id="tools2" className="subnav">
-				<SubNavItem className="subnav-inner">
-					<Button>
+			<SubNav selected={2 === idSelected}>
+				<SubNavItem>
+					<Button selected={false}>
 						<span>Submenu2</span>
 					</Button>
-					<Button>
+					<Button selected={false}>
 						<span>Submenu3</span>
 					</Button>
 				</SubNavItem>
