@@ -11,29 +11,27 @@ const routesUser: INavItem[] = [
 	},
 	{
 		id: '1',
-		descricao: 'Menu',
+		descricao: 'Menu 1',
 		children: [
 			{
 				id: '1-1',
-				descricao: 'Sub Menu',
+				descricao: 'Sub Menu 1',
+				children: [
+					{
+						id: '1-1-1',
+						descricao: 'Sub Menu 2',
+					},
+				],
+			},
+			{
+				id: '1-2',
+				descricao: 'Sub Menu 3',
 			},
 		],
 	},
 	{
 		id: '2',
 		descricao: 'Menu 2',
-		children: [
-			{
-				id: '2-1',
-				descricao: 'Sub Menu 2',
-				children: [
-					{
-						id: '2-1-1',
-						descricao: 'Sub Sub Menu 2',
-					},
-				],
-			},
-		],
 	},
 ];
 

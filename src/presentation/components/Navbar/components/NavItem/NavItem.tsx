@@ -30,6 +30,7 @@ export function NavItem({ route, level }: INavItemProps) {
 				onClick={() => onSelect(route.id)}
 				selected={selected}
 				root={true}
+				level={level + 1}
 			>
 				<span>{route.descricao}</span>
 			</Button>

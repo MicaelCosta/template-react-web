@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 interface IButton {
 	selected: boolean;
 	root?: boolean;
+	level: number;
 }
 
 export const Button = styled.button<IButton>`
@@ -18,7 +19,8 @@ export const Button = styled.button<IButton>`
 	height: 50px;
 	width: 100%;
 	line-height: 1;
-	padding: 0 16px 0 25px;
+	padding: 0 16px;
+	padding-left: ${({ level }) => level * 16}px;
 	color: ${({ theme }) => theme.colors.text};
 	transition: 0.25s;
 
@@ -26,7 +28,7 @@ export const Button = styled.button<IButton>`
 		root &&
 		css`
 			:hover {
-				background: ${({ theme }) => theme.colors.cinza4};
+				background: ${({ theme }) => theme.colors.cinza3};
 			}
 		`}
 
@@ -61,7 +63,7 @@ export const Button = styled.button<IButton>`
 		!root &&
 		selected &&
 		css`
-			background: ${({ theme }) => theme.colors.cinza3};
+			background: ${({ theme }) => theme.colors.cinza4};
 		`}
 `;
 
@@ -71,21 +73,16 @@ interface ISubNav {
 
 export const SubNav = styled.div<ISubNav>`
 	position: relative;
-	overflow: hidden;
-	height: 0;
-	transition: 0.4s;
+	display: none;
 	background: ${({ theme }) => theme.colors.cinza4};
 
 	${({ selected }) =>
 		selected &&
 		css`
-			height: 100px;
+			display: block;
 		`}
 `;
 
 export const SubNavItem = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 `;

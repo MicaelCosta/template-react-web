@@ -9,5 +9,5 @@ export const Container = styled.header`
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 20px;
-	border: solid 1px ${({ theme }) => theme.colors.cinza2};
+	border-bottom: solid 1px ${({ theme }) => theme.colors.cinza4};
 `;
