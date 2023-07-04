@@ -16,9 +16,4 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${({ theme }) => theme.fonts.regular};
         font-size: 1rem;
     }
-    
-    :focus {
-        outline: 0;
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secundary};
-    }
 `;
